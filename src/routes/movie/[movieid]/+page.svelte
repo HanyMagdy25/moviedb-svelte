@@ -1,9 +1,9 @@
 <script>
   export let data;
-  console.log("moviesData", data.oneMovie);
+  import { fly } from "svelte/transition";
 </script>
 
-<div class="movie-details">
+<div class="movie-details" in:fly={{ y: 50, duration: 500 ,delay:500}} out:fly={{ duration: 400 }}>
   <div class="img-container">
     <img
       src={"https://image.tmdb.org/t/p/original" + data.oneMovie.backdrop_path}
@@ -40,7 +40,7 @@
     border-radius: 1rem;
   }
   .movie-details {
-    margin: 2rem 20%;
+    margin: 2rem 5%;
   }
   span {
     font-weight: bold;
